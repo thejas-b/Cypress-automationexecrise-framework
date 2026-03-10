@@ -1,0 +1,27 @@
+{
+  "name": "cypress_repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "pretest": "npm run",
+    "cy:run": "npx cypress run --headless --browser chrome --spec 'cypress/integration/**/*.cy.{js,jsx,ts,tsx}'",
+    "combine-reports": "echo cypress/reports/mochareports/*.json && mochawesome-merge cypress/reports/mochareports/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "mochawesome-merge cypress/reports/mochareports/report.json -o cypress/reports/mochareports",
+    "posttest": "npx run combine-reports && npx run generate-report",
+    "test": "npm run cy:run"
+  },
+  "author": "Thejas B",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.2.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-xpath": "^1.6.2",
+    "mochawesome-merge": "^4.3.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}

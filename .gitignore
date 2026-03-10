@@ -1,0 +1,19 @@
+node_modules/
+cypress/screenshots
+cypress/videos
+cypress/reports
+**/__image_snapshots__/*
+# Cypress cache
+Cypress/
+
+# IDE folders
+.vscode/
+.vs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env files (if you use)
+.env
+.env.local
